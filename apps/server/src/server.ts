@@ -12,7 +12,7 @@ import { initMcpRelay, stopMcp } from "./services/mcp.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const defaultMigrationsFolder = resolve(__dirname, "../../../packages/db/drizzle");
-const defaultWebDist = resolve(__dirname, "../../web/dist");
+const defaultWebDist = resolve(__dirname, "../../desktop/out/renderer");
 
 export interface GodhandServerOptions {
   port?: number;

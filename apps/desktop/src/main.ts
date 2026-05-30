@@ -13,9 +13,7 @@ import {
   startDesktopServer,
   stopDesktopServer,
   getServerUrl,
-  waitForWebDev,
   DESKTOP_DEV_API_PORT,
-  DESKTOP_DEV_WEB_URL,
 } from "./server.js";
 import { loadAppIcon } from "./paths.js";
 
@@ -33,7 +31,8 @@ let mainWindow: BrowserWindow | null = null;
 let tray: Tray | null = null;
 let isQuitting = false;
 
-const isDev = !app.isPackaged;
+const useViteDevServer =
+  !app.isPackaged && Boolean(process.env.ELECTRON_RENDERER_URL);
 
 function toggleDevTools() {
   if (!mainWindow) return;
@@ -47,7 +46,10 @@ function toggleDevTools() {
 }
 
 function getWindowUrl(serverUrl: string): string {
-  return isDev ? DESKTOP_DEV_WEB_URL : serverUrl;
+  if (useViteDevServer) {
+    return process.env.ELECTRON_RENDERER_URL!;
+  }
+  return serverUrl;
 }
 
 function createWindow(url: string) {
@@ -151,12 +153,9 @@ if (!app.requestSingleInstanceLock()) {
     setupIpc();
     try {
       const server = await startDesktopServer({
-        serveWebStatic: !isDev,
-        port: isDev ? DESKTOP_DEV_API_PORT : undefined,
+        serveWebStatic: !useViteDevServer,
+        port: useViteDevServer ? DESKTOP_DEV_API_PORT : undefined,
       });
-      if (isDev) {
-        await waitForWebDev(DESKTOP_DEV_WEB_URL);
-      }
       createWindow(getWindowUrl(server.url));
       createTray();
     } catch (err) {

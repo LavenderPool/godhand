@@ -21,7 +21,7 @@ export function getDesktopPaths(): DesktopPaths {
   const monorepoRoot = join(app.getAppPath(), "..", "..");
   return {
     dbPath: join(userData, "data", "godhand.db"),
-    webDist: join(monorepoRoot, "apps", "web", "dist"),
+    webDist: join(monorepoRoot, "apps", "desktop", "out", "renderer"),
     migrationsFolder: join(monorepoRoot, "packages", "db", "drizzle"),
   };
 }

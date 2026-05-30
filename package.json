@@ -3,19 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently -n web,server -c blue,green \"pnpm --filter @godhand/web dev\" \"pnpm --filter @godhand/server dev\"",
-    "build": "pnpm --filter @godhand/shared build && pnpm --filter @godhand/db build && pnpm --filter @godhand/mcp-godot build && pnpm --filter @godhand/web build && pnpm --filter @godhand/server build",
-    "start": "pnpm --filter @godhand/server start",
+    "dev": "pnpm desktop:dev",
+    "build": "pnpm build:backend && pnpm --filter @godhand/desktop build",
+    "start": "pnpm build:backend && pnpm --filter @godhand/desktop preview",
     "generate:tools": "pnpm --filter @godhand/mcp-godot generate:tools",
     "build:backend": "pnpm --filter @godhand/shared build && pnpm --filter @godhand/db build && pnpm --filter @godhand/mcp-godot build && pnpm --filter @godhand/server build",
-    "desktop:dev": "pnpm build:backend && concurrently -k -n web,desktop -c blue,magenta \"pnpm --filter @godhand/web dev\" \"wait-on -t 120000 http-get://127.0.0.1:3000 && pnpm --filter @godhand/desktop dev\"",
-    "desktop:build": "pnpm build && pnpm --filter @godhand/desktop build && pnpm --filter @godhand/desktop run pack",
-    "desktop:preview": "pnpm --filter @godhand/desktop preview"
+    "desktop:dev": "pnpm build:backend && pnpm --filter @godhand/desktop dev",
+    "desktop:build": "pnpm build:backend && pnpm --filter @godhand/desktop build && pnpm --filter @godhand/desktop run pack",
+    "desktop:preview": "pnpm build:backend && pnpm --filter @godhand/desktop preview"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "typescript": "^5.8.3",
-    "wait-on": "^9.0.10"
+    "typescript": "^5.8.3"
   },
   "engines": {
     "node": ">=20"

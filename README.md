@@ -1,14 +1,14 @@
 # GodHand
 
-AI-ассистент для Godot: объединённый MCP-сервер, веб-интерфейс, генерация спрайтов.
+AI-ассистент для Godot: desktop-приложение с Electron + React, встроенным MCP-сервером и генерацией спрайтов.
 
-## Запуск (веб)
+## Запуск
 
 ```bash
 pnpm install
 pnpm build
-pnpm dev    # web :3000, server :3001, mcp WS :6505
-pnpm start  # production
+pnpm dev    # desktop dev: electron renderer + backend
+pnpm start  # desktop preview
 ```
 
 ## Windows Desktop (portable + tray)
@@ -32,7 +32,7 @@ pnpm desktop:build   # portable .exe в apps/desktop/release/
 
 ## Структура
 
-- `apps/web` — React UI
+- `apps/desktop/src/renderer` — React UI
 - `apps/server` — Fastify API
 - `apps/desktop` — Electron Windows-приложение
 - `packages/mcp-godot` — MCP + WebSocket relay

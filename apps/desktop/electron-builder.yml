@@ -14,7 +14,7 @@ files:
   - "!**/*.{map,d.ts,d.cts}"
   - "!**/{src,test,tests,__tests__,docs}/**"
 extraResources:
-  - from: ../web/dist
+  - from: out/renderer
     to: web/dist
     filter:
       - "**/*"
