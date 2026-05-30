@@ -143,6 +143,15 @@ export function connectCursorMcp(
     godotPath,
     apiUrl: godhandApiUrl,
   });
+  const mcpEntryPath =
+    Array.isArray(serverConfig.args) && typeof serverConfig.args[0] === "string"
+      ? serverConfig.args[0]
+      : "";
+  if (!mcpEntryPath || !existsSync(mcpEntryPath)) {
+    throw new Error(
+      `MCP server entry not found at ${mcpEntryPath || "<empty>"}. Rebuild @godhand/mcp-godot and try again.`
+    );
+  }
 
   config.mcpServers["godhand-godot"] = serverConfig;
 
@@ -155,7 +164,7 @@ export function connectCursorMcp(
 
 
 
-  return { configPath, rulesPath, mcpEntryPath: serverConfig.args[0], relayUrl };
+  return { configPath, rulesPath, mcpEntryPath, relayUrl };
 
 }
 

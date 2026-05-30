@@ -7,6 +7,7 @@ import { buildProjectWsUrl } from "./ws-server.js";
 
 const moduleDir = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
+const MCP_ENTRY_RELATIVE_PATH = join("dist", "index.js");
 
 function resolveWsPort(wsPort?: number): number {
   return Number(wsPort ?? process.env.WS_PORT ?? WS_BASE_PORT);
@@ -14,14 +15,32 @@ function resolveWsPort(wsPort?: number): number {
 
 export function getMcpPackageRoot(): string {
   try {
-    return dirname(require.resolve("@godhand/mcp-godot/package.json"));
-  } catch {
-    return resolve(moduleDir, "..");
+    const entryPath = require.resolve("@godhand/mcp-godot");
+    return dirname(dirname(entryPath));
+  } catch {}
+
+  const candidates = [
+    process.env.GODHAND_MCP_ROOT,
+    resolve(moduleDir, "../mcp-godot"),
+    resolve(moduleDir, "../../../../packages/mcp-godot"),
+    resolve(moduleDir, ".."),
+  ].filter((candidate): candidate is string => Boolean(candidate));
+
+  for (const root of candidates) {
+    if (existsSync(join(root, MCP_ENTRY_RELATIVE_PATH))) {
+      return root;
+    }
   }
+
+  return resolve(moduleDir, "..");
 }
 
 export function getMcpEntryPath(): string {
-  return join(getMcpPackageRoot(), "dist", "index.js");
+  try {
+    return require.resolve("@godhand/mcp-godot");
+  } catch {
+    return join(getMcpPackageRoot(), MCP_ENTRY_RELATIVE_PATH);
+  }
 }
 
 export function getPluginAssetsDir(): string {
