@@ -52,6 +52,7 @@
     "setupReloadGodot": "Если Godot уже был открыт, перезагрузите проект после установки плагина.",
     "pluginNotConnectedError": "Плагин Godot не подключён. Откройте проект в Godot Editor и дождитесь WebSocket-соединения.",
     "pluginToolRequiresEditor": "Этот инструмент требует плагин Godot Editor. CLI-инструменты могут работать без него.",
+    "toolsManifestWarning": "Загружено всего {{count}} инструментов. Манифест plugin-инструментов не загрузился — пересоберите бэкенд (pnpm build:backend) и перезапустите.",
     "openInGodot": "Открыть в Godot",
     "openInGodotSuccess": "Godot Editor запускается…",
     "godotPathRequired": "Укажите путь к Godot в Настройках или нажмите «Найти Godot»."

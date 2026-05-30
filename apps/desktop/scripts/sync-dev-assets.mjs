@@ -17,6 +17,11 @@ const syncTargets = [
     from: resolve(repoRoot, "packages/mcp-godot/dist/plugin"),
     to: resolve(desktopOutDir, "dist/plugin"),
   },
+  {
+    name: "mcp generated tools manifest",
+    from: resolve(repoRoot, "packages/mcp-godot/dist/generated"),
+    to: resolve(desktopOutDir, "dist/generated"),
+  },
 ];
 
 for (const target of syncTargets) {

@@ -65,7 +65,7 @@ export function getCliAssetPath(fileName: string): string {
 }
 
 export function getGeneratedToolsManifestPath(): string {
-  return join(moduleDir, "generated", "godot-pro-tools.json");
+  return join(getMcpPackageRoot(), "dist", "generated", "godot-pro-tools.json");
 }
 
 export const GODOT_MCP_PLUGIN_RES_PATH = "res://addons/godot_mcp/plugin.cfg";

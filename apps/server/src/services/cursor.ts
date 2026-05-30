@@ -54,6 +54,7 @@ alwaysApply: true
 - This project is wired to the Godot MCP server (tools prefixed by their source, e.g. [PLUGIN], [CLI], [BUILTIN]).
 - Before building anything, call \`get_godot_guide\` (topic "overview", then "quickstart-2d"/"quickstart-3d"/"mobile"). MCP also exposes guide/skills resources and ready-made prompts.
 - Always start by calling \`get_project_info\` and \`get_filesystem_tree\`. Open or create a scene before editing nodes. Call \`save_scene\` after editing scenes. All changes go through Godot UndoRedo.
+- Most tools are [PLUGIN] tools that require the Godot editor to be open with the GodHand plugin connected. A few tools (\`get_project_info\`, \`create_scene\`, \`save_scene\`) also have a CLI variant exposed as \`cli_*\` that works without the editor; if you call the bare name while the editor is closed, the server automatically falls back to the CLI variant.
 - Property values use Godot literals: \`Vector2(x, y)\`, \`Color(r,g,b,a)\`, \`true\`, numbers, or \`res://\` paths.
 - Prefer high-level builders to scaffold playable games fast: \`setup_2d_platformer_player\`, \`setup_3d_character\`, \`apply_mobile_preset\`, \`setup_touch_controls\`; then refine with granular tools and playtest via \`play_scene\` + \`get_game_screenshot\`.
 - Targeting phones: run \`apply_mobile_preset\` early, add \`setup_touch_controls\` + \`apply_safe_area\`, and finish with \`optimize_for_mobile\` and \`deploy_to_android\`/\`export_ios\`.

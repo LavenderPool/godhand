@@ -45,6 +45,7 @@ export function McpTab({
 }) {
   const { t } = useTranslation();
   const [tools, setTools] = useState<McpToolDefinition[]>([]);
+  const [toolsLoaded, setToolsLoaded] = useState(false);
   const [status, setStatus] = useState<McpStatus | null>(initialStatus);
   const [logs, setLogs] = useState<string[]>([]);
   const [selectedTool, setSelectedTool] = useState("");
@@ -61,6 +62,7 @@ export function McpTab({
       api.getStatus(projectId),
     ]);
     setTools(loadedTools);
+    setToolsLoaded(true);
     setLogs(loadedLogs.logs);
     setStatus(loadedStatus);
   };
@@ -214,6 +216,11 @@ export function McpTab({
             </Button>
           </div>
         )}
+        {toolsLoaded && tools.length < 50 && (
+          <div className="mb-3 rounded-lg border border-amber-500/40 bg-amber-500/10 p-3 text-xs text-amber-600 dark:text-amber-400">
+            {t("mcp.toolsManifestWarning", { count: tools.length })}
+          </div>
+        )}
         <Input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -236,7 +243,17 @@ export function McpTab({
                 <div className="truncate font-mono">{tool.name}</div>
                 <div className="truncate text-xs text-muted-foreground">{tool.description}</div>
               </div>
-              <Badge variant={tool.source === "cli" ? "cli" : "default"}>{tool.source}</Badge>
+              <Badge
+                variant={
+                  tool.source === "cli"
+                    ? "cli"
+                    : tool.source === "builtin"
+                      ? "secondary"
+                      : "default"
+                }
+              >
+                {tool.source}
+              </Badge>
             </button>
           ))}
         </div>

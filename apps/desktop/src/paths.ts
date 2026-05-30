@@ -5,6 +5,7 @@ export interface DesktopPaths {
   dbPath: string;
   webDist: string;
   migrationsFolder: string;
+  mcpRoot: string;
 }
 
 export function getDesktopPaths(): DesktopPaths {
@@ -15,6 +16,7 @@ export function getDesktopPaths(): DesktopPaths {
       dbPath: join(userData, "data", "godhand.db"),
       webDist: join(process.resourcesPath, "web", "dist"),
       migrationsFolder: join(process.resourcesPath, "db", "drizzle"),
+      mcpRoot: join(process.resourcesPath, "mcp-godot"),
     };
   }
 
@@ -23,6 +25,7 @@ export function getDesktopPaths(): DesktopPaths {
     dbPath: join(userData, "data", "godhand.db"),
     webDist: join(monorepoRoot, "apps", "desktop", "out", "renderer"),
     migrationsFolder: join(monorepoRoot, "packages", "db", "drizzle"),
+    mcpRoot: join(monorepoRoot, "packages", "mcp-godot"),
   };
 }
 

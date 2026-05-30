@@ -22,6 +22,10 @@ extraResources:
     to: db/drizzle
     filter:
       - "**/*"
+  - from: ../../packages/mcp-godot/dist
+    to: mcp-godot/dist
+    filter:
+      - "**/*"
   - from: resources/icon.png
     to: icon.png
 asarUnpack:

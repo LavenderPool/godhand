@@ -10,7 +10,7 @@ export default defineConfig({
   main: {
     plugins: [
       externalizeDepsPlugin({
-        exclude: ["@godhand/server", "@godhand/shared", "@godhand/mcp-godot"],
+        exclude: ["@godhand/server", "@godhand/shared"],
       }),
     ],
     build: {

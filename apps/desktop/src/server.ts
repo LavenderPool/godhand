@@ -17,6 +17,9 @@ export async function startDesktopServer(
   if (handle) return handle;
 
   const paths = getDesktopPaths();
+  if (!process.env.GODHAND_MCP_ROOT) {
+    process.env.GODHAND_MCP_ROOT = paths.mcpRoot;
+  }
   handle = await startGodhandServer({
     dbPath: paths.dbPath,
     webDist: paths.webDist,

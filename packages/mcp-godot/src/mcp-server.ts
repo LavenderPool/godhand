@@ -11,7 +11,7 @@ import {
   GetPromptRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import type { McpToolDefinition } from "@godhand/shared";
-import { WS_BASE_PORT } from "@godhand/shared";
+import { WS_BASE_PORT, CLI_TOOL_PREFIX, CLI_TOOLS_WITH_PREFIX } from "@godhand/shared";
 import {
   sharedWsRelay,
   HttpRelayClient,
@@ -22,10 +22,12 @@ import { getGeneratedToolsManifestPath, getPluginAssetsDir, getPluginVersion } f
 import { GUIDE_TOPICS, getAllGuides, getGuide, getBuiltinTools, callBuiltinTool } from "./guides.js";
 
 function loadPluginTools(): McpToolDefinition[] {
+  const manifest = getGeneratedToolsManifestPath();
   try {
-    const manifest = getGeneratedToolsManifestPath();
     return JSON.parse(readFileSync(manifest, "utf-8")) as McpToolDefinition[];
-  } catch {
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`[mcp-godot] Failed to load plugin tools manifest at ${manifest}: ${message}`);
     return [];
   }
 }
@@ -83,6 +85,12 @@ export class McpGodotServer {
     this.cliTools = getCliToolDefinitions();
     this.builtinTools = getBuiltinTools();
 
+    if (this.pluginTools.length === 0) {
+      console.error(
+        "[mcp-godot] No plugin tools loaded - only CLI/builtin tools will be available. Rebuild @godhand/mcp-godot."
+      );
+    }
+
     this.server = new Server(
       { name: "godhand-godot", version: "0.1.0" },
       { capabilities: { tools: {}, resources: {}, prompts: {} } }
@@ -117,7 +125,15 @@ export class McpGodotServer {
   }
 
   async callTool(name: string, args: Record<string, unknown> = {}) {
-    const tool = this.getAllTools().find((t) => t.name === name);
+    const allTools = this.getAllTools();
+    let tool = allTools.find((t) => t.name === name);
+
+    if (!tool && CLI_TOOLS_WITH_PREFIX.has(name)) {
+      const aliased = `${CLI_TOOL_PREFIX}${name}`;
+      tool = allTools.find((t) => t.name === aliased);
+      if (tool) name = aliased;
+    }
+
     if (!tool) {
       throw new Error(`Unknown tool: ${name}`);
     }
@@ -132,6 +148,14 @@ export class McpGodotServer {
 
     if (this.projectRelay instanceof HttpRelayClient) {
       await this.projectRelay.refreshStatus();
+    }
+
+    if (
+      tool.source === "plugin" &&
+      !this.projectRelay.isConnected() &&
+      CLI_TOOLS_WITH_PREFIX.has(name)
+    ) {
+      return this.cli.callTool(`${CLI_TOOL_PREFIX}${name}`, args);
     }
 
     const result = await this.projectRelay.call(name, args);

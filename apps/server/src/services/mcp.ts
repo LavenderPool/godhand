@@ -5,7 +5,7 @@ import {
   buildProjectWsUrl,
   getPluginVersion,
 } from "@godhand/mcp-godot/lib";
-import { WS_BASE_PORT } from "@godhand/shared";
+import { WS_BASE_PORT, CLI_TOOL_PREFIX, CLI_TOOLS_WITH_PREFIX } from "@godhand/shared";
 import { emitEvent } from "../events.js";
 import { eq } from "drizzle-orm";
 import type { Db } from "@godhand/db";
@@ -180,24 +180,46 @@ export function getDefaultRelayUrl(projectId: string) {
   return buildProjectWsUrl(projectId, Number(process.env.WS_PORT ?? WS_BASE_PORT));
 }
 
+async function runCliTool(projectId: string, cliName: string, args: Record<string, unknown>) {
+  const { GodotCliService } = await import("@godhand/mcp-godot/lib");
+  const godotPath = await resolveGodotPath();
+  const projectPath = typeof args.projectPath === "string" && args.projectPath.trim()
+    ? args.projectPath
+    : getProjectPath(projectId);
+  const cli = new GodotCliService({ godotPath });
+  return cli.callTool(cliName, projectPath ? { ...args, projectPath } : args);
+}
+
 export async function callMcpTool(projectId: string, name: string, args: Record<string, unknown> = {}) {
   const instance = startMcp(projectId);
-  const tool = instance.getAllTools().find((t) => t.name === name);
+  const allTools = instance.getAllTools();
+  let tool = allTools.find((t) => t.name === name);
+
+  // Some tools (e.g. get_project_info) exist both as a plugin tool and a CLI
+  // tool exposed under the `cli_` prefix. Callers/rules that ask for the bare
+  // name should still resolve to the CLI variant when no exact match exists.
+  if (!tool && CLI_TOOLS_WITH_PREFIX.has(name)) {
+    const aliased = `${CLI_TOOL_PREFIX}${name}`;
+    tool = allTools.find((t) => t.name === aliased);
+    if (tool) name = aliased;
+  }
+
   if (!tool) {
     throw new Error(`Tool not found: ${name}`);
   }
 
   if (tool.source === "cli") {
-    const { GodotCliService } = await import("@godhand/mcp-godot/lib");
-    const godotPath = await resolveGodotPath();
-    const projectPath = typeof args.projectPath === "string" && args.projectPath.trim()
-      ? args.projectPath
-      : getProjectPath(projectId);
-    const cli = new GodotCliService({ godotPath });
-    return cli.callTool(name, projectPath ? { ...args, projectPath } : args);
+    return runCliTool(projectId, name, args);
   }
 
   const relay = instance.getProjectRelay();
+
+  // Plugin tools require a live Godot editor. When the plugin isn't connected,
+  // fall back to the CLI equivalent for the few tools that have one.
+  if (tool.source === "plugin" && !relay.isConnected() && CLI_TOOLS_WITH_PREFIX.has(name)) {
+    return runCliTool(projectId, `${CLI_TOOL_PREFIX}${name}`, args);
+  }
+
   const result = await relay.call(name, args);
   return { result };
 }

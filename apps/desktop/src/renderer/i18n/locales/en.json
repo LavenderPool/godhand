@@ -52,6 +52,7 @@
     "setupReloadGodot": "If Godot was already open, reload the project after plugin install.",
     "pluginNotConnectedError": "Godot plugin is not connected. Open the project in Godot Editor and wait for the WebSocket connection.",
     "pluginToolRequiresEditor": "This tool requires the Godot Editor plugin. CLI tools may work without it.",
+    "toolsManifestWarning": "Only {{count}} tools loaded. The plugin tools manifest failed to load — rebuild the backend (pnpm build:backend) and restart.",
     "openInGodot": "Open in Godot",
     "openInGodotSuccess": "Launching Godot Editor…",
     "godotPathRequired": "Set the Godot path in Settings or click Find Godot."
