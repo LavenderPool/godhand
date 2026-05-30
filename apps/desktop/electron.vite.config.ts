@@ -11,6 +11,7 @@ export default defineConfig({
     build: {
       rollupOptions: {
         input: { index: resolve(__dirname, "src/main.ts") },
+        external: ["ws", "bufferutil", "utf-8-validate"],
       },
     },
   },

@@ -16,7 +16,8 @@
     "@godhand/db": "workspace:*",
     "@godhand/mcp-godot": "workspace:*",
     "@godhand/server": "workspace:*",
-    "@godhand/shared": "workspace:*"
+    "@godhand/shared": "workspace:*",
+    "ws": "^8.21.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.21",
