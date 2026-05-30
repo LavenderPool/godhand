@@ -6,7 +6,6 @@ import { fileURLToPath } from "url";
 import { WS_BASE_PORT } from "@godhand/shared";
 import {
   buildCursorMcpServerConfig as buildCursorMcpServerConfigFromLib,
-  getMcpEntryPath,
 } from "@godhand/mcp-godot/lib";
 
 
@@ -97,7 +96,6 @@ function buildCursorMcpServerConfig(options: {
   });
   return {
     ...baseConfig,
-    args: [getMcpEntryPath()],
     env: {
       ...baseConfig.env,
       GODOT_PROJECT_PATH: options.projectPath,

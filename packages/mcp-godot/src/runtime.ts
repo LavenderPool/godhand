@@ -1,17 +1,23 @@
 import { cpSync, existsSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join, resolve } from "path";
 import { fileURLToPath } from "url";
+import { createRequire } from "module";
 import { WS_BASE_PORT } from "@godhand/shared";
 import { buildProjectWsUrl } from "./ws-server.js";
 
 const moduleDir = dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 
 function resolveWsPort(wsPort?: number): number {
   return Number(wsPort ?? process.env.WS_PORT ?? WS_BASE_PORT);
 }
 
 export function getMcpPackageRoot(): string {
-  return resolve(moduleDir, "..");
+  try {
+    return dirname(require.resolve("@godhand/mcp-godot/package.json"));
+  } catch {
+    return resolve(moduleDir, "..");
+  }
 }
 
 export function getMcpEntryPath(): string {

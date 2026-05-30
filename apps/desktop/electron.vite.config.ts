@@ -1,7 +1,10 @@
 import { resolve } from "path";
+import { fileURLToPath } from "node:url";
 import { defineConfig, externalizeDepsPlugin } from "electron-vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+
+const projectRoot = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
   main: {
@@ -12,7 +15,7 @@ export default defineConfig({
     ],
     build: {
       rollupOptions: {
-        input: { index: resolve(__dirname, "src/main.ts") },
+        input: { index: resolve(projectRoot, "src/main.ts") },
         external: ["ws", "bufferutil", "utf-8-validate", "better-sqlite3", "bindings"],
       },
     },
@@ -21,7 +24,7 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()],
     build: {
       rollupOptions: {
-        input: { index: resolve(__dirname, "src/preload.ts") },
+        input: { index: resolve(projectRoot, "src/preload.ts") },
       },
     },
   },
@@ -29,7 +32,7 @@ export default defineConfig({
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        "@": resolve(__dirname, "src/renderer"),
+        "@": resolve(projectRoot, "src/renderer"),
       },
     },
     server: {
@@ -46,7 +49,7 @@ export default defineConfig({
     },
     build: {
       rollupOptions: {
-        input: { index: resolve(__dirname, "src/renderer/index.html") },
+        input: { index: resolve(projectRoot, "src/renderer/index.html") },
       },
     },
   },
