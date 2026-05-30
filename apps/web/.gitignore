@@ -1,0 +1,4 @@
+# Build artifacts for @godhand/web
+dist/
+*.tsbuildinfo
+node_modules/

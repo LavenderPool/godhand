@@ -1,0 +1,39 @@
+appId: com.godhand.app
+productName: GodHand
+directories:
+  output: release
+  buildResources: resources
+electronLanguages:
+  - en
+  - ru
+files:
+  - out/**/*
+  - package.json
+  - "!**/{CHANGELOG,README,readme,Readme,LICENSE,license,AUTHORS,CONTRIBUTING}*"
+  - "!**/{example,examples}/**"
+  - "!**/*.{map,d.ts,d.cts}"
+  - "!**/{src,test,tests,__tests__,docs}/**"
+extraResources:
+  - from: ../web/dist
+    to: web/dist
+    filter:
+      - "**/*"
+  - from: ../../packages/db/drizzle
+    to: db/drizzle
+    filter:
+      - "**/*"
+  - from: resources/icon.png
+    to: icon.png
+asarUnpack:
+  - "**/node_modules/better-sqlite3/build/Release/*.node"
+afterPack: scripts/after-pack.mjs
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+  icon: resources/icon.png
+  artifactName: GodHand-${version}-portable.exe
+  signAndEditExecutable: false
+portable:
+  artifactName: GodHand-${version}-portable.exe

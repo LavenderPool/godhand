@@ -1,0 +1,4 @@
+# Build artifacts for @godhand/desktop
+out/
+release/
+node_modules/

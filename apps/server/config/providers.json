@@ -1,0 +1,26 @@
+[
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "models": ["dall-e-3", "gpt-image-1", "dall-e-2"],
+    "description": "OpenAI Images API"
+  },
+  {
+    "id": "flux",
+    "name": "Flux (fal.ai)",
+    "models": ["fal-ai/flux-pro", "fal-ai/flux/dev", "fal-ai/flux/schnell"],
+    "description": "Flux models via fal.ai"
+  },
+  {
+    "id": "fal",
+    "name": "fal.ai",
+    "models": ["fal-ai/flux/dev", "fal-ai/flux-pro", "fal-ai/fast-sdxl", "fal-ai/recraft-v3"],
+    "description": "fal.ai image generation"
+  },
+  {
+    "id": "bfl",
+    "name": "Black Forest Labs",
+    "models": ["flux-dev"],
+    "description": "FLUX.1 [dev] — ключ с dashboard.bfl.ai"
+  }
+]

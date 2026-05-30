@@ -1,0 +1,20 @@
+[
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "type": "llm",
+    "models": ["gpt-4o", "gpt-4o-mini"]
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "type": "llm",
+    "models": ["claude-sonnet-4-20250514", "claude-3-5-sonnet-20241022"]
+  },
+  {
+    "id": "ollama",
+    "name": "Ollama",
+    "type": "llm",
+    "models": ["llama3.2", "mistral"]
+  }
+]

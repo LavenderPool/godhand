@@ -1,0 +1,1712 @@
+[
+  {
+    "name": "add_animation_track",
+    "description": "Godot MCP Pro: add animation track",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_animation_track"
+    }
+  },
+  {
+    "name": "add_audio_bus",
+    "description": "Godot MCP Pro: add audio bus",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_audio_bus"
+    }
+  },
+  {
+    "name": "add_audio_bus_effect",
+    "description": "Godot MCP Pro: add audio bus effect",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_audio_bus_effect"
+    }
+  },
+  {
+    "name": "add_audio_player",
+    "description": "Godot MCP Pro: add audio player",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_audio_player"
+    }
+  },
+  {
+    "name": "add_autoload",
+    "description": "Godot MCP Pro: add autoload",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_autoload"
+    }
+  },
+  {
+    "name": "add_gridmap",
+    "description": "Godot MCP Pro: add gridmap",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_gridmap"
+    }
+  },
+  {
+    "name": "add_mesh_instance",
+    "description": "Godot MCP Pro: add mesh instance",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_mesh_instance"
+    }
+  },
+  {
+    "name": "add_node",
+    "description": "Godot MCP Pro: add node",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_node"
+    }
+  },
+  {
+    "name": "add_raycast",
+    "description": "Godot MCP Pro: add raycast",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_raycast"
+    }
+  },
+  {
+    "name": "add_resource",
+    "description": "Godot MCP Pro: add resource",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_resource"
+    }
+  },
+  {
+    "name": "add_scene_instance",
+    "description": "Godot MCP Pro: add scene instance",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_scene_instance"
+    }
+  },
+  {
+    "name": "add_state_machine_state",
+    "description": "Godot MCP Pro: add state machine state",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_state_machine_state"
+    }
+  },
+  {
+    "name": "add_state_machine_transition",
+    "description": "Godot MCP Pro: add state machine transition",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for add_state_machine_transition"
+    }
+  },
+  {
+    "name": "analyze_scene_complexity",
+    "description": "Godot MCP Pro: analyze scene complexity",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for analyze_scene_complexity"
+    }
+  },
+  {
+    "name": "analyze_signal_flow",
+    "description": "Godot MCP Pro: analyze signal flow",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for analyze_signal_flow"
+    }
+  },
+  {
+    "name": "apply_particle_preset",
+    "description": "Godot MCP Pro: apply particle preset",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for apply_particle_preset"
+    }
+  },
+  {
+    "name": "assert_node_state",
+    "description": "Godot MCP Pro: assert node state",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for assert_node_state"
+    }
+  },
+  {
+    "name": "assert_screen_text",
+    "description": "Godot MCP Pro: assert screen text",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for assert_screen_text"
+    }
+  },
+  {
+    "name": "assign_shader_material",
+    "description": "Godot MCP Pro: assign shader material",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for assign_shader_material"
+    }
+  },
+  {
+    "name": "attach_script",
+    "description": "Godot MCP Pro: attach script",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for attach_script"
+    }
+  },
+  {
+    "name": "bake_navigation_mesh",
+    "description": "Godot MCP Pro: bake navigation mesh",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for bake_navigation_mesh"
+    }
+  },
+  {
+    "name": "batch_add_nodes",
+    "description": "Godot MCP Pro: batch add nodes",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for batch_add_nodes"
+    }
+  },
+  {
+    "name": "batch_get_properties",
+    "description": "Godot MCP Pro: batch get properties",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for batch_get_properties"
+    }
+  },
+  {
+    "name": "batch_set_property",
+    "description": "Godot MCP Pro: batch set property",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for batch_set_property"
+    }
+  },
+  {
+    "name": "capture_frames",
+    "description": "Godot MCP Pro: capture frames",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for capture_frames"
+    }
+  },
+  {
+    "name": "clear_output",
+    "description": "Godot MCP Pro: clear output",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for clear_output"
+    }
+  },
+  {
+    "name": "click_button_by_text",
+    "description": "Godot MCP Pro: click button by text",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for click_button_by_text"
+    }
+  },
+  {
+    "name": "compare_screenshots",
+    "description": "Godot MCP Pro: compare screenshots",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for compare_screenshots"
+    }
+  },
+  {
+    "name": "connect_signal",
+    "description": "Godot MCP Pro: connect signal",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for connect_signal"
+    }
+  },
+  {
+    "name": "create_animation",
+    "description": "Godot MCP Pro: create animation",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for create_animation"
+    }
+  },
+  {
+    "name": "create_animation_tree",
+    "description": "Godot MCP Pro: create animation tree",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for create_animation_tree"
+    }
+  },
+  {
+    "name": "create_particles",
+    "description": "Godot MCP Pro: create particles",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for create_particles"
+    }
+  },
+  {
+    "name": "create_resource",
+    "description": "Godot MCP Pro: create resource",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for create_resource"
+    }
+  },
+  {
+    "name": "create_scene",
+    "description": "Godot MCP Pro: create scene",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for create_scene"
+    }
+  },
+  {
+    "name": "create_script",
+    "description": "Godot MCP Pro: create script",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for create_script"
+    }
+  },
+  {
+    "name": "create_shader",
+    "description": "Godot MCP Pro: create shader",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for create_shader"
+    }
+  },
+  {
+    "name": "create_theme",
+    "description": "Godot MCP Pro: create theme",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for create_theme"
+    }
+  },
+  {
+    "name": "cross_scene_set_property",
+    "description": "Godot MCP Pro: cross scene set property",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for cross_scene_set_property"
+    }
+  },
+  {
+    "name": "delete_node",
+    "description": "Godot MCP Pro: delete node",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for delete_node"
+    }
+  },
+  {
+    "name": "delete_scene",
+    "description": "Godot MCP Pro: delete scene",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for delete_scene"
+    }
+  },
+  {
+    "name": "deploy_to_android",
+    "description": "Godot MCP Pro: deploy to android",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for deploy_to_android"
+    }
+  },
+  {
+    "name": "detect_circular_dependencies",
+    "description": "Godot MCP Pro: detect circular dependencies",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for detect_circular_dependencies"
+    }
+  },
+  {
+    "name": "disconnect_signal",
+    "description": "Godot MCP Pro: disconnect signal",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for disconnect_signal"
+    }
+  },
+  {
+    "name": "duplicate_node",
+    "description": "Godot MCP Pro: duplicate node",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for duplicate_node"
+    }
+  },
+  {
+    "name": "edit_resource",
+    "description": "Godot MCP Pro: edit resource",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for edit_resource"
+    }
+  },
+  {
+    "name": "edit_script",
+    "description": "Godot MCP Pro: edit script",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for edit_script"
+    }
+  },
+  {
+    "name": "edit_shader",
+    "description": "Godot MCP Pro: edit shader",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for edit_shader"
+    }
+  },
+  {
+    "name": "execute_editor_script",
+    "description": "Godot MCP Pro: execute editor script",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for execute_editor_script"
+    }
+  },
+  {
+    "name": "execute_game_script",
+    "description": "Godot MCP Pro: execute game script",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for execute_game_script"
+    }
+  },
+  {
+    "name": "export_project",
+    "description": "Godot MCP Pro: export project",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for export_project"
+    }
+  },
+  {
+    "name": "find_nearby_nodes",
+    "description": "Godot MCP Pro: find nearby nodes",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for find_nearby_nodes"
+    }
+  },
+  {
+    "name": "find_node_references",
+    "description": "Godot MCP Pro: find node references",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for find_node_references"
+    }
+  },
+  {
+    "name": "find_nodes_by_script",
+    "description": "Godot MCP Pro: find nodes by script",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for find_nodes_by_script"
+    }
+  },
+  {
+    "name": "find_nodes_by_type",
+    "description": "Godot MCP Pro: find nodes by type",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for find_nodes_by_type"
+    }
+  },
+  {
+    "name": "find_nodes_in_group",
+    "description": "Godot MCP Pro: find nodes in group",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for find_nodes_in_group"
+    }
+  },
+  {
+    "name": "find_script_references",
+    "description": "Godot MCP Pro: find script references",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for find_script_references"
+    }
+  },
+  {
+    "name": "find_signal_connections",
+    "description": "Godot MCP Pro: find signal connections",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for find_signal_connections"
+    }
+  },
+  {
+    "name": "find_ui_elements",
+    "description": "Godot MCP Pro: find ui elements",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for find_ui_elements"
+    }
+  },
+  {
+    "name": "find_unused_resources",
+    "description": "Godot MCP Pro: find unused resources",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for find_unused_resources"
+    }
+  },
+  {
+    "name": "get_android_preset_info",
+    "description": "Godot MCP Pro: get android preset info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_android_preset_info"
+    }
+  },
+  {
+    "name": "get_animation_info",
+    "description": "Godot MCP Pro: get animation info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_animation_info"
+    }
+  },
+  {
+    "name": "get_animation_tree_structure",
+    "description": "Godot MCP Pro: get animation tree structure",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_animation_tree_structure"
+    }
+  },
+  {
+    "name": "get_audio_bus_layout",
+    "description": "Godot MCP Pro: get audio bus layout",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_audio_bus_layout"
+    }
+  },
+  {
+    "name": "get_audio_info",
+    "description": "Godot MCP Pro: get audio info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_audio_info"
+    }
+  },
+  {
+    "name": "get_autoload",
+    "description": "Godot MCP Pro: get autoload",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_autoload"
+    }
+  },
+  {
+    "name": "get_collision_info",
+    "description": "Godot MCP Pro: get collision info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_collision_info"
+    }
+  },
+  {
+    "name": "get_editor_camera",
+    "description": "Godot MCP Pro: get editor camera",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_editor_camera"
+    }
+  },
+  {
+    "name": "get_editor_errors",
+    "description": "Godot MCP Pro: get editor errors",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_editor_errors"
+    }
+  },
+  {
+    "name": "get_editor_performance",
+    "description": "Godot MCP Pro: get editor performance",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_editor_performance"
+    }
+  },
+  {
+    "name": "get_editor_screenshot",
+    "description": "Godot MCP Pro: get editor screenshot",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_editor_screenshot"
+    }
+  },
+  {
+    "name": "get_export_info",
+    "description": "Godot MCP Pro: get export info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_export_info"
+    }
+  },
+  {
+    "name": "get_filesystem_tree",
+    "description": "Godot MCP Pro: get filesystem tree",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_filesystem_tree"
+    }
+  },
+  {
+    "name": "get_game_node_properties",
+    "description": "Godot MCP Pro: get game node properties",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_game_node_properties"
+    }
+  },
+  {
+    "name": "get_game_scene_tree",
+    "description": "Godot MCP Pro: get game scene tree",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_game_scene_tree"
+    }
+  },
+  {
+    "name": "get_game_screenshot",
+    "description": "Godot MCP Pro: get game screenshot",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_game_screenshot"
+    }
+  },
+  {
+    "name": "get_input_actions",
+    "description": "Godot MCP Pro: get input actions",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_input_actions"
+    }
+  },
+  {
+    "name": "get_navigation_info",
+    "description": "Godot MCP Pro: get navigation info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_navigation_info"
+    }
+  },
+  {
+    "name": "get_node_groups",
+    "description": "Godot MCP Pro: get node groups",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_node_groups"
+    }
+  },
+  {
+    "name": "get_node_properties",
+    "description": "Godot MCP Pro: get node properties",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_node_properties"
+    }
+  },
+  {
+    "name": "get_open_scripts",
+    "description": "Godot MCP Pro: get open scripts",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_open_scripts"
+    }
+  },
+  {
+    "name": "get_output_log",
+    "description": "Godot MCP Pro: get output log",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_output_log"
+    }
+  },
+  {
+    "name": "get_particle_info",
+    "description": "Godot MCP Pro: get particle info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_particle_info"
+    }
+  },
+  {
+    "name": "get_performance_monitors",
+    "description": "Godot MCP Pro: get performance monitors",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_performance_monitors"
+    }
+  },
+  {
+    "name": "get_physics_layers",
+    "description": "Godot MCP Pro: get physics layers",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_physics_layers"
+    }
+  },
+  {
+    "name": "get_project_info",
+    "description": "Godot MCP Pro: get project info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_project_info"
+    }
+  },
+  {
+    "name": "get_project_settings",
+    "description": "Godot MCP Pro: get project settings",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_project_settings"
+    }
+  },
+  {
+    "name": "get_project_statistics",
+    "description": "Godot MCP Pro: get project statistics",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_project_statistics"
+    }
+  },
+  {
+    "name": "get_resource_preview",
+    "description": "Godot MCP Pro: get resource preview",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_resource_preview"
+    }
+  },
+  {
+    "name": "get_scene_dependencies",
+    "description": "Godot MCP Pro: get scene dependencies",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_scene_dependencies"
+    }
+  },
+  {
+    "name": "get_scene_exports",
+    "description": "Godot MCP Pro: get scene exports",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_scene_exports"
+    }
+  },
+  {
+    "name": "get_scene_file_content",
+    "description": "Godot MCP Pro: get scene file content",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_scene_file_content"
+    }
+  },
+  {
+    "name": "get_scene_tree",
+    "description": "Godot MCP Pro: get scene tree",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_scene_tree"
+    }
+  },
+  {
+    "name": "get_shader_params",
+    "description": "Godot MCP Pro: get shader params",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_shader_params"
+    }
+  },
+  {
+    "name": "get_signals",
+    "description": "Godot MCP Pro: get signals",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_signals"
+    }
+  },
+  {
+    "name": "get_test_report",
+    "description": "Godot MCP Pro: get test report",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_test_report"
+    }
+  },
+  {
+    "name": "get_theme_info",
+    "description": "Godot MCP Pro: get theme info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for get_theme_info"
+    }
+  },
+  {
+    "name": "list_android_devices",
+    "description": "Godot MCP Pro: list android devices",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for list_android_devices"
+    }
+  },
+  {
+    "name": "list_animations",
+    "description": "Godot MCP Pro: list animations",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for list_animations"
+    }
+  },
+  {
+    "name": "list_export_presets",
+    "description": "Godot MCP Pro: list export presets",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for list_export_presets"
+    }
+  },
+  {
+    "name": "list_scripts",
+    "description": "Godot MCP Pro: list scripts",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for list_scripts"
+    }
+  },
+  {
+    "name": "monitor_properties",
+    "description": "Godot MCP Pro: monitor properties",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for monitor_properties"
+    }
+  },
+  {
+    "name": "move_node",
+    "description": "Godot MCP Pro: move node",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for move_node"
+    }
+  },
+  {
+    "name": "move_to",
+    "description": "Godot MCP Pro: move to",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for move_to"
+    }
+  },
+  {
+    "name": "navigate_to",
+    "description": "Godot MCP Pro: navigate to",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for navigate_to"
+    }
+  },
+  {
+    "name": "open_scene",
+    "description": "Godot MCP Pro: open scene",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for open_scene"
+    }
+  },
+  {
+    "name": "play_scene",
+    "description": "Godot MCP Pro: play scene",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for play_scene"
+    }
+  },
+  {
+    "name": "project_path_to_uid",
+    "description": "Godot MCP Pro: project path to uid",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for project_path_to_uid"
+    }
+  },
+  {
+    "name": "read_resource",
+    "description": "Godot MCP Pro: read resource",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for read_resource"
+    }
+  },
+  {
+    "name": "read_script",
+    "description": "Godot MCP Pro: read script",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for read_script"
+    }
+  },
+  {
+    "name": "read_shader",
+    "description": "Godot MCP Pro: read shader",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for read_shader"
+    }
+  },
+  {
+    "name": "reload_plugin",
+    "description": "Godot MCP Pro: reload plugin",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for reload_plugin"
+    }
+  },
+  {
+    "name": "reload_project",
+    "description": "Godot MCP Pro: reload project",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for reload_project"
+    }
+  },
+  {
+    "name": "remove_animation",
+    "description": "Godot MCP Pro: remove animation",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for remove_animation"
+    }
+  },
+  {
+    "name": "remove_autoload",
+    "description": "Godot MCP Pro: remove autoload",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for remove_autoload"
+    }
+  },
+  {
+    "name": "remove_state_machine_state",
+    "description": "Godot MCP Pro: remove state machine state",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for remove_state_machine_state"
+    }
+  },
+  {
+    "name": "remove_state_machine_transition",
+    "description": "Godot MCP Pro: remove state machine transition",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for remove_state_machine_transition"
+    }
+  },
+  {
+    "name": "rename_node",
+    "description": "Godot MCP Pro: rename node",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for rename_node"
+    }
+  },
+  {
+    "name": "replay_recording",
+    "description": "Godot MCP Pro: replay recording",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for replay_recording"
+    }
+  },
+  {
+    "name": "run_stress_test",
+    "description": "Godot MCP Pro: run stress test",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for run_stress_test"
+    }
+  },
+  {
+    "name": "run_test_scenario",
+    "description": "Godot MCP Pro: run test scenario",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for run_test_scenario"
+    }
+  },
+  {
+    "name": "save_scene",
+    "description": "Godot MCP Pro: save scene",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for save_scene"
+    }
+  },
+  {
+    "name": "search_files",
+    "description": "Godot MCP Pro: search files",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for search_files"
+    }
+  },
+  {
+    "name": "search_in_files",
+    "description": "Godot MCP Pro: search in files",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for search_in_files"
+    }
+  },
+  {
+    "name": "set_anchor_preset",
+    "description": "Godot MCP Pro: set anchor preset",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_anchor_preset"
+    }
+  },
+  {
+    "name": "set_animation_keyframe",
+    "description": "Godot MCP Pro: set animation keyframe",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_animation_keyframe"
+    }
+  },
+  {
+    "name": "set_audio_bus",
+    "description": "Godot MCP Pro: set audio bus",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_audio_bus"
+    }
+  },
+  {
+    "name": "set_auto_dismiss",
+    "description": "Godot MCP Pro: set auto dismiss",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_auto_dismiss"
+    }
+  },
+  {
+    "name": "set_blend_tree_node",
+    "description": "Godot MCP Pro: set blend tree node",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_blend_tree_node"
+    }
+  },
+  {
+    "name": "set_editor_camera",
+    "description": "Godot MCP Pro: set editor camera",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_editor_camera"
+    }
+  },
+  {
+    "name": "set_game_node_property",
+    "description": "Godot MCP Pro: set game node property",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_game_node_property"
+    }
+  },
+  {
+    "name": "set_input_action",
+    "description": "Godot MCP Pro: set input action",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_input_action"
+    }
+  },
+  {
+    "name": "set_material_3d",
+    "description": "Godot MCP Pro: set material 3d",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_material_3d"
+    }
+  },
+  {
+    "name": "set_navigation_layers",
+    "description": "Godot MCP Pro: set navigation layers",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_navigation_layers"
+    }
+  },
+  {
+    "name": "set_node_groups",
+    "description": "Godot MCP Pro: set node groups",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_node_groups"
+    }
+  },
+  {
+    "name": "set_particle_color_gradient",
+    "description": "Godot MCP Pro: set particle color gradient",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_particle_color_gradient"
+    }
+  },
+  {
+    "name": "set_particle_material",
+    "description": "Godot MCP Pro: set particle material",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_particle_material"
+    }
+  },
+  {
+    "name": "set_physics_layers",
+    "description": "Godot MCP Pro: set physics layers",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_physics_layers"
+    }
+  },
+  {
+    "name": "set_project_setting",
+    "description": "Godot MCP Pro: set project setting",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_project_setting"
+    }
+  },
+  {
+    "name": "set_shader_param",
+    "description": "Godot MCP Pro: set shader param",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_shader_param"
+    }
+  },
+  {
+    "name": "set_theme_color",
+    "description": "Godot MCP Pro: set theme color",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_theme_color"
+    }
+  },
+  {
+    "name": "set_theme_constant",
+    "description": "Godot MCP Pro: set theme constant",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_theme_constant"
+    }
+  },
+  {
+    "name": "set_theme_font_size",
+    "description": "Godot MCP Pro: set theme font size",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_theme_font_size"
+    }
+  },
+  {
+    "name": "set_theme_stylebox",
+    "description": "Godot MCP Pro: set theme stylebox",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_theme_stylebox"
+    }
+  },
+  {
+    "name": "set_tree_parameter",
+    "description": "Godot MCP Pro: set tree parameter",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for set_tree_parameter"
+    }
+  },
+  {
+    "name": "setup_camera_3d",
+    "description": "Godot MCP Pro: setup camera 3d",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for setup_camera_3d"
+    }
+  },
+  {
+    "name": "setup_collision",
+    "description": "Godot MCP Pro: setup collision",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for setup_collision"
+    }
+  },
+  {
+    "name": "setup_control",
+    "description": "Godot MCP Pro: setup control",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for setup_control"
+    }
+  },
+  {
+    "name": "setup_environment",
+    "description": "Godot MCP Pro: setup environment",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for setup_environment"
+    }
+  },
+  {
+    "name": "setup_lighting",
+    "description": "Godot MCP Pro: setup lighting",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for setup_lighting"
+    }
+  },
+  {
+    "name": "setup_navigation_agent",
+    "description": "Godot MCP Pro: setup navigation agent",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for setup_navigation_agent"
+    }
+  },
+  {
+    "name": "setup_navigation_region",
+    "description": "Godot MCP Pro: setup navigation region",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for setup_navigation_region"
+    }
+  },
+  {
+    "name": "setup_physics_body",
+    "description": "Godot MCP Pro: setup physics body",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for setup_physics_body"
+    }
+  },
+  {
+    "name": "simulate_action",
+    "description": "Godot MCP Pro: simulate action",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for simulate_action"
+    }
+  },
+  {
+    "name": "simulate_key",
+    "description": "Godot MCP Pro: simulate key",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for simulate_key"
+    }
+  },
+  {
+    "name": "simulate_mouse_click",
+    "description": "Godot MCP Pro: simulate mouse click",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for simulate_mouse_click"
+    }
+  },
+  {
+    "name": "simulate_mouse_move",
+    "description": "Godot MCP Pro: simulate mouse move",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for simulate_mouse_move"
+    }
+  },
+  {
+    "name": "simulate_sequence",
+    "description": "Godot MCP Pro: simulate sequence",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for simulate_sequence"
+    }
+  },
+  {
+    "name": "start_recording",
+    "description": "Godot MCP Pro: start recording",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for start_recording"
+    }
+  },
+  {
+    "name": "stop_recording",
+    "description": "Godot MCP Pro: stop recording",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for stop_recording"
+    }
+  },
+  {
+    "name": "stop_scene",
+    "description": "Godot MCP Pro: stop scene",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for stop_scene"
+    }
+  },
+  {
+    "name": "tilemap_clear",
+    "description": "Godot MCP Pro: tilemap clear",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for tilemap_clear"
+    }
+  },
+  {
+    "name": "tilemap_fill_rect",
+    "description": "Godot MCP Pro: tilemap fill rect",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for tilemap_fill_rect"
+    }
+  },
+  {
+    "name": "tilemap_get_cell",
+    "description": "Godot MCP Pro: tilemap get cell",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for tilemap_get_cell"
+    }
+  },
+  {
+    "name": "tilemap_get_info",
+    "description": "Godot MCP Pro: tilemap get info",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for tilemap_get_info"
+    }
+  },
+  {
+    "name": "tilemap_get_used_cells",
+    "description": "Godot MCP Pro: tilemap get used cells",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for tilemap_get_used_cells"
+    }
+  },
+  {
+    "name": "tilemap_set_cell",
+    "description": "Godot MCP Pro: tilemap set cell",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for tilemap_set_cell"
+    }
+  },
+  {
+    "name": "uid_to_project_path",
+    "description": "Godot MCP Pro: uid to project path",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for uid_to_project_path"
+    }
+  },
+  {
+    "name": "update_property",
+    "description": "Godot MCP Pro: update property",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for update_property"
+    }
+  },
+  {
+    "name": "validate_script",
+    "description": "Godot MCP Pro: validate script",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for validate_script"
+    }
+  },
+  {
+    "name": "wait_for_node",
+    "description": "Godot MCP Pro: wait for node",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for wait_for_node"
+    }
+  },
+  {
+    "name": "watch_signals",
+    "description": "Godot MCP Pro: watch signals",
+    "source": "plugin",
+    "inputSchema": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Parameters for watch_signals"
+    }
+  }
+]

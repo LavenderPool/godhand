@@ -1,0 +1,3 @@
+# Build artifacts for @godhand/mcp-godot
+dist/
+src/generated/

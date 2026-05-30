@@ -1,0 +1,29 @@
+{
+  "name": "@godhand/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GodHand Windows desktop application",
+  "main": "./out/main/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "pack": "electron-builder --win portable --config electron-builder.yml",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@godhand/db": "workspace:*",
+    "@godhand/mcp-godot": "workspace:*",
+    "@godhand/server": "workspace:*",
+    "@godhand/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "electron": "^35.2.1",
+    "electron-builder": "^26.0.12",
+    "electron-vite": "^3.1.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

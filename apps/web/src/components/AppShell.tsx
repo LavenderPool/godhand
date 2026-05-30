@@ -1,0 +1,14 @@
+import { Header } from "./Header";
+import { SkullOverlay } from "./SkullOverlay";
+
+export function AppShell({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <div className="relative flex flex-1 flex-col overflow-hidden">
+        {children}
+        <SkullOverlay />
+      </div>
+    </div>
+  );
+}

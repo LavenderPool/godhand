@@ -1,0 +1,303 @@
+{
+  "$comment": "Rich metadata sidecar merged into the generated MCP tool manifest. Keys are tool names. Each entry may set: category, description, examples, and params (per-parameter description/type/enum/default). Auto-inferred schema is used as the base; values here override it. Not every tool needs an entry.",
+
+  "create_scene": {
+    "category": "scene",
+    "description": "Create a new .tscn scene file with a chosen root node type. Use CharacterBody2D/Node2D for 2D, Node3D/CharacterBody3D for 3D, Control for UI. Always follow with add_node and save_scene.",
+    "params": {
+      "path": { "description": "res:// path for the new scene, e.g. res://scenes/player.tscn" },
+      "root_type": { "description": "Root node class name, e.g. Node2D, CharacterBody2D, Node3D, Control", "default": "Node2D" }
+    },
+    "examples": [
+      { "description": "Create a 2D player scene", "arguments": { "path": "res://scenes/player.tscn", "root_type": "CharacterBody2D" } }
+    ]
+  },
+  "add_node": {
+    "category": "node",
+    "description": "Add a child node of any Godot class to the currently edited scene. Properties accept Godot literal strings like 'Vector2(10, 20)' or 'Color(1,0,0,1)'.",
+    "params": {
+      "parent_path": { "description": "Path of the parent node relative to root, '.' for root", "default": "." },
+      "type": { "description": "Node class name, e.g. Sprite2D, CollisionShape2D, Camera3D" },
+      "name": { "description": "Name for the new node" },
+      "properties": { "description": "Optional dict of property -> Godot literal value string" }
+    }
+  },
+  "update_property": {
+    "category": "node",
+    "description": "Set a single property on a node. Values use Godot literal syntax: 'Vector2(x, y)', 'Color(r,g,b,a)', 'true', '3.14', or a res:// path for resources."
+  },
+
+  "setup_collision": {
+    "category": "physics",
+    "params": {
+      "shape": { "description": "Collision shape type", "enum": ["rectangle", "rect", "circle", "capsule", "segment", "box", "sphere", "cylinder", "custom"] },
+      "dimension": { "description": "2D or 3D collision (auto-detected from node when omitted)", "enum": ["2d", "3d"] }
+    }
+  },
+  "setup_physics_body": {
+    "category": "physics",
+    "params": {
+      "motion_mode": { "description": "CharacterBody motion mode", "enum": ["grounded", "floating"] }
+    }
+  },
+
+  "create_particles": {
+    "category": "particles",
+    "description": "Create a 2D (GPUParticles2D) or 3D (GPUParticles3D) particle node. Combine with apply_particle_preset for instant effects.",
+    "params": {
+      "is_3d": { "description": "true for GPUParticles3D, false for GPUParticles2D", "type": "boolean", "default": false }
+    }
+  },
+  "apply_particle_preset": {
+    "category": "particles",
+    "params": {
+      "preset": { "description": "Built-in particle effect preset", "enum": ["explosion", "fire", "smoke", "sparks", "rain", "snow", "magic", "dust"] }
+    }
+  },
+
+  "create_shader": {
+    "category": "shader",
+    "params": {
+      "shader_type": { "description": "Godot shader mode", "enum": ["spatial", "canvas_item", "particles", "sky", "fog"], "default": "canvas_item" }
+    }
+  },
+
+  "setup_lighting": {
+    "category": "scene3d",
+    "description": "Add a 3D light. Use light_type for a raw light or preset for a tuned setup.",
+    "params": {
+      "light_type": { "description": "Light class", "enum": ["DirectionalLight3D", "OmniLight3D", "SpotLight3D"] },
+      "preset": { "description": "Tuned lighting preset", "enum": ["sun", "indoor", "dramatic"] }
+    }
+  },
+  "add_mesh_instance": {
+    "category": "scene3d",
+    "params": {
+      "mesh_type": { "description": "Primitive mesh class", "enum": ["BoxMesh", "SphereMesh", "CylinderMesh", "CapsuleMesh", "PlaneMesh", "PrismMesh", "TorusMesh", "QuadMesh"] }
+    }
+  },
+  "setup_environment": {
+    "category": "scene3d",
+    "params": {
+      "background_mode": { "description": "World background", "enum": ["sky", "color", "canvas", "clear_color"], "default": "sky" },
+      "tonemap_mode": { "description": "Tonemapper", "enum": ["LINEAR", "REINHARDT", "FILMIC", "ACES", "AGX"] }
+    }
+  },
+  "setup_camera_3d": {
+    "category": "scene3d",
+    "params": {
+      "projection": { "description": "Camera projection", "enum": ["perspective", "orthogonal", "frustum"], "default": "perspective" }
+    }
+  },
+
+  "setup_navigation_region": {
+    "category": "navigation",
+    "params": {
+      "dimension": { "description": "2D or 3D navigation", "enum": ["2d", "3d"] }
+    }
+  },
+
+  "export_project": {
+    "category": "export",
+    "description": "Headless-export the project for a preset (actually runs the export, producing the binary). For Android/iOS prefer deploy_to_android / export_ios.",
+    "params": {
+      "preset_name": { "description": "Export preset name from Project > Export" },
+      "debug": { "description": "Export a debug build (true) or release (false)", "type": "boolean", "default": true }
+    }
+  },
+  "deploy_to_android": {
+    "category": "android",
+    "description": "Full Android pipeline: headless export APK -> adb install -r -> optional launch. Requires an Android export preset and a connected device (list_android_devices).",
+    "params": {
+      "debug": { "type": "boolean", "default": true },
+      "launch": { "description": "Launch the app after install", "type": "boolean", "default": true },
+      "skip_export": { "description": "Reuse an existing APK instead of re-exporting", "type": "boolean", "default": false }
+    }
+  },
+
+  "setup_camera_2d": {
+    "category": "scene2d",
+    "description": "Add or configure a Camera2D with zoom, limits, smoothing and drag margins. Attach as a child of the player to follow it.",
+    "params": {
+      "parent_path": { "description": "Parent node path, '.' for root", "default": "." },
+      "name": { "description": "Camera node name", "default": "Camera2D" },
+      "zoom": { "description": "Zoom as 'Vector2(x, y)' or number; >1 zooms in", "default": 1.0 },
+      "position_smoothing": { "description": "Enable smooth follow", "type": "boolean", "default": false },
+      "limit_left": { "description": "Left scroll limit in px", "type": "integer" },
+      "limit_top": { "description": "Top scroll limit in px", "type": "integer" },
+      "limit_right": { "description": "Right scroll limit in px", "type": "integer" },
+      "limit_bottom": { "description": "Bottom scroll limit in px", "type": "integer" },
+      "current": { "description": "Make this the active camera", "type": "boolean", "default": true }
+    },
+    "examples": [
+      { "description": "Follow-cam on the player", "arguments": { "parent_path": "Player", "position_smoothing": true, "current": true } }
+    ]
+  },
+  "setup_parallax": {
+    "category": "scene2d",
+    "description": "Create a ParallaxBackground with one or more ParallaxLayer children for scrolling backgrounds.",
+    "params": {
+      "parent_path": { "description": "Parent node path", "default": "." },
+      "layers": { "description": "Array of layer dicts: { texture, motion_scale, name }", "type": "array" }
+    }
+  },
+  "add_animated_sprite": {
+    "category": "scene2d",
+    "description": "Add an AnimatedSprite2D and build a SpriteFrames resource from a sprite sheet (hframes x vframes) or a list of textures.",
+    "params": {
+      "parent_path": { "description": "Parent node path", "default": "." },
+      "name": { "description": "Node name", "default": "AnimatedSprite2D" },
+      "sheet_texture": { "description": "res:// path to a sprite sheet texture" },
+      "hframes": { "description": "Horizontal frame count in the sheet", "type": "integer", "default": 1 },
+      "vframes": { "description": "Vertical frame count in the sheet", "type": "integer", "default": 1 },
+      "animation_name": { "description": "Name of the created animation", "default": "default" },
+      "fps": { "description": "Animation speed in frames per second", "type": "number", "default": 8.0 },
+      "loop": { "description": "Loop the animation", "type": "boolean", "default": true },
+      "autoplay": { "description": "Play immediately on ready", "type": "boolean", "default": true }
+    }
+  },
+  "setup_light_2d": {
+    "category": "scene2d",
+    "description": "Add 2D lighting: PointLight2D / DirectionalLight2D, optionally a CanvasModulate for global darkness. Use for day/night and atmosphere.",
+    "params": {
+      "parent_path": { "description": "Parent node path", "default": "." },
+      "light_type": { "description": "2D light class", "enum": ["PointLight2D", "DirectionalLight2D"], "default": "PointLight2D" },
+      "energy": { "description": "Light energy", "type": "number", "default": 1.0 },
+      "color": { "description": "Light color as 'Color(r,g,b,a)' or hex" },
+      "texture": { "description": "res:// path to the light texture (required for PointLight2D glow)" },
+      "canvas_modulate": { "description": "Also add a CanvasModulate to darken the scene", "type": "boolean", "default": false },
+      "canvas_modulate_color": { "description": "Ambient darkness color when canvas_modulate is true" }
+    }
+  },
+  "create_tileset": {
+    "category": "scene2d",
+    "description": "Create a TileSet resource with an atlas source from a texture, sized by tile dimensions. Use before tilemap_set_cell / tilemap_fill_rect.",
+    "params": {
+      "path": { "description": "res:// path for the .tres TileSet, e.g. res://tilesets/world.tres" },
+      "texture": { "description": "res:// path to the atlas texture" },
+      "tile_size": { "description": "Tile size as 'Vector2i(w, h)' or single int", "default": 16 },
+      "tilemap_node_path": { "description": "Optional: assign the created TileSet to this TileMapLayer node" }
+    }
+  },
+  "setup_2d_platformer_player": {
+    "category": "scene2d",
+    "description": "High-level: build a ready-to-play 2D platformer player (CharacterBody2D + Sprite2D + CollisionShape2D + movement script with gravity/jump/run, wired to input actions). Ideal as the first step of a one-prompt 2D game.",
+    "params": {
+      "scene_path": { "description": "res:// path to create the player scene", "default": "res://scenes/player.tscn" },
+      "sprite_texture": { "description": "Optional res:// path to the player texture" },
+      "speed": { "description": "Horizontal move speed (px/s)", "type": "number", "default": 300.0 },
+      "jump_velocity": { "description": "Jump impulse (negative goes up)", "type": "number", "default": -400.0 },
+      "left_action": { "description": "Input action for moving left", "default": "ui_left" },
+      "right_action": { "description": "Input action for moving right", "default": "ui_right" },
+      "jump_action": { "description": "Input action for jumping", "default": "ui_accept" },
+      "add_camera": { "description": "Attach a follow Camera2D", "type": "boolean", "default": true }
+    },
+    "examples": [
+      { "description": "Default platformer hero", "arguments": { "scene_path": "res://scenes/player.tscn", "add_camera": true } }
+    ]
+  },
+
+  "setup_csg": {
+    "category": "scene3d",
+    "description": "Add a CSG primitive (great for fast 3D level blockouts before final meshes).",
+    "params": {
+      "parent_path": { "description": "Parent node path", "default": "." },
+      "csg_type": { "description": "CSG primitive class", "enum": ["CSGBox3D", "CSGSphere3D", "CSGCylinder3D", "CSGTorus3D", "CSGMesh3D", "CSGCombiner3D"], "default": "CSGBox3D" },
+      "operation": { "description": "Boolean operation", "enum": ["union", "intersection", "subtraction"], "default": "union" },
+      "size": { "description": "Box size as 'Vector3(x,y,z)'" },
+      "position": { "description": "Position as 'Vector3(x,y,z)'" }
+    }
+  },
+  "add_multimesh": {
+    "category": "scene3d",
+    "description": "Add a MultiMeshInstance3D for high-performance instancing (forests, crowds) - critical for mobile performance.",
+    "params": {
+      "parent_path": { "description": "Parent node path", "default": "." },
+      "mesh_type": { "description": "Primitive mesh for instances", "enum": ["BoxMesh", "SphereMesh", "CylinderMesh", "CapsuleMesh", "PlaneMesh", "QuadMesh"], "default": "BoxMesh" },
+      "instance_count": { "description": "Number of instances to allocate", "type": "integer", "default": 100 }
+    }
+  },
+  "setup_3d_character": {
+    "category": "scene3d",
+    "description": "High-level: build a ready-to-play 3D character (CharacterBody3D + mesh + CollisionShape3D + follow camera + third-person movement script). Ideal as the first step of a one-prompt 3D game.",
+    "params": {
+      "scene_path": { "description": "res:// path for the character scene", "default": "res://scenes/player.tscn" },
+      "mesh_type": { "description": "Body mesh primitive", "enum": ["CapsuleMesh", "BoxMesh", "SphereMesh"], "default": "CapsuleMesh" },
+      "speed": { "description": "Move speed (m/s)", "type": "number", "default": 5.0 },
+      "jump_velocity": { "description": "Jump impulse", "type": "number", "default": 4.5 },
+      "add_camera": { "description": "Attach a third-person SpringArm3D + Camera3D", "type": "boolean", "default": true }
+    }
+  },
+  "add_reflection_probe": {
+    "category": "scene3d",
+    "params": {
+      "parent_path": { "description": "Parent node path", "default": "." }
+    }
+  },
+  "add_decal": {
+    "category": "scene3d",
+    "params": {
+      "parent_path": { "description": "Parent node path", "default": "." },
+      "texture": { "description": "res:// path to the decal albedo texture" }
+    }
+  },
+
+  "get_ios_preset_info": {
+    "category": "ios",
+    "description": "Read iOS export preset metadata (bundle id, export path) from export_presets.cfg."
+  },
+  "export_ios": {
+    "category": "ios",
+    "description": "Headless-export an iOS Xcode project/IPA for a preset. iOS builds require macOS + Xcode; on other OSes returns a clear suggestion.",
+    "params": {
+      "preset_name": { "description": "iOS export preset name" },
+      "debug": { "type": "boolean", "default": true }
+    }
+  },
+
+  "apply_mobile_preset": {
+    "category": "mobile",
+    "description": "Apply mobile-optimized project settings in one call: renderer, stretch mode, VRAM texture compression (ETC2/ASTC), anti-aliasing and an FPS cap. Run early when targeting phones.",
+    "params": {
+      "renderer": { "description": "Rendering method for phones", "enum": ["mobile", "gl_compatibility"], "default": "mobile" },
+      "stretch_mode": { "description": "Window stretch mode", "enum": ["canvas_items", "viewport", "disabled"], "default": "canvas_items" },
+      "stretch_aspect": { "description": "Aspect handling for varied screens", "enum": ["expand", "keep", "keep_width", "keep_height", "ignore"], "default": "expand" },
+      "vram_compression": { "description": "Import textures with mobile VRAM compression", "type": "boolean", "default": true },
+      "msaa": { "description": "MSAA level for mobile (0 disables)", "enum": ["disabled", "2x", "4x"], "default": "disabled" },
+      "fps_cap": { "description": "Max FPS to save battery (0 = uncapped)", "type": "integer", "default": 60 },
+      "base_width": { "description": "Design viewport width", "type": "integer", "default": 1080 },
+      "base_height": { "description": "Design viewport height", "type": "integer", "default": 1920 }
+    }
+  },
+  "setup_touch_controls": {
+    "category": "mobile",
+    "description": "Add an on-screen touch control rig (virtual joystick + action buttons) on a CanvasLayer and wire it to input actions. Makes a desktop game playable on phones.",
+    "params": {
+      "parent_path": { "description": "Parent node path", "default": "." },
+      "joystick": { "description": "Add a virtual movement joystick", "type": "boolean", "default": true },
+      "buttons": { "description": "Array of action button dicts: { action, text, position }", "type": "array" }
+    }
+  },
+  "apply_safe_area": {
+    "category": "mobile",
+    "description": "Adjust a Control (typically the HUD root) to respect the device safe area (notch/rounded corners) using DisplayServer.get_display_safe_area at runtime via an attached helper script.",
+    "params": {
+      "node_path": { "description": "Control node to constrain to the safe area" }
+    }
+  },
+  "optimize_for_mobile": {
+    "category": "mobile",
+    "description": "Analyze the current scene/project for mobile performance (draw calls, node count, uncompressed textures, heavy effects) and return prioritized recommendations; can auto-apply safe fixes.",
+    "params": {
+      "auto_apply": { "description": "Automatically apply low-risk optimizations", "type": "boolean", "default": false }
+    }
+  },
+
+  "get_godot_guide": {
+    "category": "guide",
+    "description": "Return curated Godot MCP workflow guidance for a topic (start here before building). Use overview first, then quickstart-2d / quickstart-3d / mobile as needed.",
+    "params": {
+      "topic": { "description": "Guide topic", "enum": ["overview", "quickstart-2d", "quickstart-3d", "mobile", "optimization", "animation", "shaders", "testing", "export"], "default": "overview" }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+# Build artifacts for @godhand/server
+dist/
+node_modules/

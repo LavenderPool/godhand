@@ -1,0 +1,3 @@
+# Build artifacts for @godhand/db
+dist/
+# drizzle/ is source (migrations) — do not ignore

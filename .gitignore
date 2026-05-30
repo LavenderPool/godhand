@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.tmp-pack-check/
+
+# Build outputs (global fallback)
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Runtime / secrets
+.env
+.env.*
+!.env.example
+.data/
+*.db
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test / coverage
+coverage/
+.nyc_output/
+
+# Godot (future full project)
+.godot/
+*.import
